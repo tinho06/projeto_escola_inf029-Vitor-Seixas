@@ -33,10 +33,35 @@ typedef struct disciplina{
 
 int main(){
     
-    int sair = 0;
+    aluno a1[3];
+    int sair_cadastro = 0;
+    int sair_menu = 0;
+    int opcao_menu;
+    int opcao_cadastro;
+    int opcao_relatorio;
+    int i = 0;
 
-    while(!sair){
+    while(!sair_menu){
         printf("menu:\n0- Cadastro\n1- Relatorios");
+        scanf("%d", &opcao_menu);
+
+        switch(opcao_menu){
+
+            case 0:
+                printf("0- Cadastro de aluno\n1- Cadastro de professor\n 2- Cadastro de disciplina");
+                scanf("%d", &opcao_cadastro);
+
+                switch(opcao_cadastro){
+                    
+                    case 0:
+                        
+                        while(i < 3 || !sair_cadastro){
+                            printf("nome do aluno:\n");
+                            scanf("%[^\n]", &a1[i].nome_a);
+                        }
+                }
+
+        }
         
     }
     
