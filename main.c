@@ -8,16 +8,16 @@ typedef struct data{
     }data;
 
 typedef struct aluno{
-    int cpf;
-    int matricula;
-    char nome_a [60];
+    int cpf_aluno;
+    int matricula_aluno;
+    char nome_aluno [60];
     data nascimento_aluno;
 
     }aluno;
 
 typedef struct professor{
-    int cpf;
-    int matricula;
+    int cpf_prof;
+    int matricula_prof;
     char nome_p [60];
     data nascimento_prof;
     
@@ -58,7 +58,14 @@ int main(){
                         while(i < 3 || !sair_cadastro){
                             printf("nome do aluno:\n");
                             scanf("%[^\n]", &a1[i].nome_a);
+                            printf("matricula do aluno:\n");
+                            scanf("%[^\n]", &a1[i].matricula_a);
+                            printf("cpf do aluno:\n");
+                            scanf("%[^\n]", a1.cpf_aluno)
+                            i++;
+                            break;
                         }
+                        break;
                 }
 
         }
