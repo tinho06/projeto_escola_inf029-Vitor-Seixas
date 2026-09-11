@@ -59,7 +59,7 @@ int main(){
                         
                         while(i < 3 || !sair_cadastro){
                             printf("nome do aluno:\n");
-                            scanf("%[^\n]", &a1[i].nome_aluno);
+                            scanf("%s", &a1[i].nome_aluno);
                             printf("matricula do aluno:\n");
                             scanf("%d", &a1[i].matricula_aluno);
                             printf("cpf do aluno:\n");
@@ -73,7 +73,7 @@ int main(){
                         
                         while(i < 3 || !sair_cadastro){
                             printf("nome do aluno:\n");
-                            scanf("%[^\n]", &p1[i].nome_prof);
+                            scanf("%s", &p1[i].nome_prof);
                             printf("matricula do aluno:\n");
                             scanf("%d", &p1[i].matricula_prof);
                             printf("cpf do aluno:\n");
@@ -88,7 +88,7 @@ int main(){
 
                          while(i < 3 || !sair_cadastro){
                             printf("nome da disciplina:\n");
-                            scanf("%[^\n]", &d1[i].nome_dis);
+                            scanf("%s", &d1[i].nome_dis);
                             printf("codigo da disciplina:\n");
                             scanf("%d", &d1[i].codigo);
                             printf("semestre da disciplina:\n");
