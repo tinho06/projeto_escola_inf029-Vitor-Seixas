@@ -18,7 +18,7 @@ typedef struct aluno{
 typedef struct professor{
     int cpf_prof;
     int matricula_prof;
-    char nome_p [60];
+    char nome_prof [60];
     data nascimento_prof;
     
     }professor;
@@ -33,6 +33,8 @@ typedef struct disciplina{
 
 int main(){
     
+    disciplina d1[3];
+    professor p1[3];
     aluno a1[3];
     int sair_cadastro = 0;
     int sair_menu = 0;
@@ -48,28 +50,64 @@ int main(){
         switch(opcao_menu){
 
             case 0:
-                printf("0- Cadastro de aluno\n1- Cadastro de professor\n 2- Cadastro de disciplina");
+                printf("0- Cadastro de aluno\n1- Cadastro de professor\n 2- Cadastro de disciplina 3- voltar\n");
                 scanf("%d", &opcao_cadastro);
-
+                
                 switch(opcao_cadastro){
                     
                     case 0:
                         
                         while(i < 3 || !sair_cadastro){
                             printf("nome do aluno:\n");
-                            scanf("%[^\n]", &a1[i].nome_a);
+                            scanf("%[^\n]", &a1[i].nome_aluno);
                             printf("matricula do aluno:\n");
-                            scanf("%[^\n]", &a1[i].matricula_a);
+                            scanf("%d", &a1[i].matricula_aluno);
                             printf("cpf do aluno:\n");
-                            scanf("%[^\n]", a1.cpf_aluno)
+                            scanf("%d", a1[i].cpf_aluno);
                             i++;
                             break;
                         }
-                        break;
-                }
-
-        }
+                    break;
+                
+                    case 1:
+                        
+                        while(i < 3 || !sair_cadastro){
+                            printf("nome do aluno:\n");
+                            scanf("%[^\n]", &p1[i].nome_prof);
+                            printf("matricula do aluno:\n");
+                            scanf("%d", &p1[i].matricula_prof);
+                            printf("cpf do aluno:\n");
+                            scanf("%d", &p1[i].cpf_prof);
+                            i++;
+                            break;
+                        
+                        }
+                    break;
         
-    }
+                    case 2:
+
+                         while(i < 3 || !sair_cadastro){
+                            printf("nome da disciplina:\n");
+                            scanf("%[^\n]", &d1[i].nome_dis);
+                            printf("codigo da disciplina:\n");
+                            scanf("%d", &d1[i].codigo);
+                            printf("semestre da disciplina:\n");
+                            scanf("%d", &d1[i].semestre);
+                            i++;
+                            break;
+                        
+                        }
+                    break;
+
+                }
+            break;
+        
+            case 1:
+
+            /*menu de listar*/
+            
+            break;
+        
+        }
     
 }
