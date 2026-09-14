@@ -42,6 +42,8 @@ int main(){
     int opcao_cadastro;
     int opcao_relatorio;
     int i = 0;
+    int j = 0;
+    int k = 0;
 
     while(!sair_menu){
         printf("menu:\n0- Cadastro\n1- Relatorios");
@@ -57,50 +59,40 @@ int main(){
                     
                     case 0:
                         
-                        while(i < 3 || !sair_cadastro){
-                            printf("nome do aluno:\n");
-                            scanf("%s", &a1[i].nome_aluno);
-                            printf("matricula do aluno:\n");
-                            scanf("%d", &a1[i].matricula_aluno);
-                            printf("cpf do aluno:\n");
-                            scanf("%d", a1[i].cpf_aluno);
-                            i++;
-                            break;
-                        }
-                    break;
+                        printf("nome do aluno:\n");
+                        scanf("%s", a1[i].nome_aluno);
+                        printf("matricula do aluno:\n");
+                        scanf("%d", &a1[i].matricula_aluno);
+                        printf("cpf do aluno:\n");
+                        scanf("%d", &a1[i].cpf_aluno);
+                        i++;
+                        break;
                 
                     case 1:
                         
-                        while(i < 3 || !sair_cadastro){
-                            printf("nome do aluno:\n");
-                            scanf("%s", &p1[i].nome_prof);
-                            printf("matricula do aluno:\n");
-                            scanf("%d", &p1[i].matricula_prof);
-                            printf("cpf do aluno:\n");
-                            scanf("%d", &p1[i].cpf_prof);
-                            i++;
-                            break;
+                        printf("nome do aluno:\n");
+                        scanf("%s", p1[j].nome_prof);
+                        printf("matricula do aluno:\n");
+                        scanf("%d", &p1[j].matricula_prof);
+                        printf("cpf do aluno:\n");
+                        scanf("%d", &p1[j].cpf_prof);
+                        j++;
+                        break;
                         
-                        }
-                    break;
+                
         
                     case 2:
 
-                         while(i < 3 || !sair_cadastro){
-                            printf("nome da disciplina:\n");
-                            scanf("%s", &d1[i].nome_dis);
-                            printf("codigo da disciplina:\n");
-                            scanf("%d", &d1[i].codigo);
-                            printf("semestre da disciplina:\n");
-                            scanf("%d", &d1[i].semestre);
-                            i++;
-                            break;
-                        
-                        }
-                    break;
+                        printf("nome da disciplina:\n");
+                        scanf("%s", d1[k].nome_dis);
+                        printf("codigo da disciplina:\n");
+                        scanf("%d", &d1[k].codigo);
+                        printf("semestre da disciplina:\n");
+                        scanf("%d", &d1[k].semestre);
+                        k++;
+                        break;
 
                 }
-            break;
         
             case 1:
 
@@ -110,4 +102,6 @@ int main(){
         
         }
     
+    }
+
 }
