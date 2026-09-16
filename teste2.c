@@ -33,9 +33,9 @@ typedef struct disciplina{
 
 void menu_cadastro(int op){
     
-    disciplina d1[3];
-    professor p1[3];
-    aluno a1[3];
+    disciplina d0[3];
+    professor p0[3];
+    aluno a0[3];
     int sair_cadastro = 0;
     int sair_menu = 0;
     int opcao_menu;
@@ -86,6 +86,9 @@ void menu_cadastro(int op){
 }
 int main(){
 
+    disciplina d0[3];
+    professor p0[3];
+    aluno a0[3];
     int opcao_menu;
     int opcao_cadastro;
     int sair_menu = 0;
