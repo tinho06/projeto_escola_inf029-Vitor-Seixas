@@ -31,32 +31,19 @@ typedef struct disciplina{
     
     }disciplina;
 
-void menu_cadastro(int op){
+void cadastra_aluno(int op, aluno a0[]){
     
-    disciplina d0[3];
-    professor p0[3];
-    aluno a0[3];
-    int sair_cadastro = 0;
-    int sair_menu = 0;
-    int opcao_menu;
     int i = 0;
-    int j = 0;
-    int k = 0;
     
-    scanf("%d", &op);
-                
-                switch(op){
-                    
-                    case 0:
-                        
-                        printf("nome do aluno:\n");
-                        scanf("%s", a1[i].nome_aluno);
-                        printf("matricula do aluno:\n");
-                        scanf("%d", &a1[i].matricula_aluno);
-                        printf("cpf do aluno:\n");
-                        scanf("%d", &a1[i].cpf_aluno);
-                        i++;
-                        break;
+    scanf("%d", &op);   
+    printf("nome do aluno:\n");
+    scanf("%s", a0[i].nome_aluno);
+    printf("matricula do aluno:\n");
+    scanf("%d", &a0[i].matricula_aluno);
+    printf("cpf do aluno:\n");
+    scanf("%d", &a0[i].cpf_aluno);
+    i++;
+    break;
                 
                     case 1:
                         
