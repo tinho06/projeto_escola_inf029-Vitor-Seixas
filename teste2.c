@@ -33,14 +33,37 @@ typedef struct disciplina{
 
 void cadastra_aluno(aluno a0[], int i){
     
-       
-    printf("nome do aluno:\n");
-    scanf("%s", a0[i].nome_aluno);
-    printf("matricula do aluno:\n");
-    scanf("%d", &a0[i].matricula_aluno);
-    printf("cpf do aluno:\n");
-    scanf("%d", &a0[i].cpf_aluno);
-    i++;
+    int op;
+    printf("0- adicionar aluno\n1- atualizar aluno\n 2- excluir aluno\n");
+    scanf("%d", &op);
+    
+    switch(op){
+
+        case 0:
+
+            printf("nome do aluno:\n");
+            scanf("%s", a0[i].nome_aluno);
+            printf("matricula do aluno:\n");
+            scanf("%d", &a0[i].matricula_aluno);
+            printf("cpf do aluno:\n");
+            scanf("%d", &a0[i].cpf_aluno);
+            i++;
+            break;
+
+        case 2:
+
+            if(i == 0){
+                printf("nenhum aluno cadastrado\n")
+            }
+
+            else{
+
+                
+
+            }
+
+    }
+
 }                
 
 void cadastra_professor(professor p0[], int j){
@@ -65,6 +88,24 @@ void cadastra_disciplina(disciplina d0[], int k){
     scanf("%d", &d0[k].semestre);
     k++;
         
+}
+
+void lista_aluno(aluno dl[], int x){
+
+    if (x == 0){
+        printf("nenhum aluno cadastrado");
+    
+    }
+    
+    else{
+
+        for (int limite = 0; limite < x; limite ++ ){
+            printf("%s\n%d\n%d\n\n", d1[limite].nome_aluno, d1[limite].cpf_aluno, d1[limite].matricula_aluno);
+        }
+
+    }
+
+
 }
 
 int main(){
