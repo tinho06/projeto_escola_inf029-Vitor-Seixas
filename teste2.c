@@ -145,23 +145,50 @@ int main(){
                         switch(opcao_cadastro_aluno){
                         
                             case 0:
-                                cadastra_aluno(a1, ii);
-                                ii++;
-                                break;
+                                valida_aluno(aluno_valido);
+                                if(aluno_valido < 2){
+                                    cadastra_aluno(a1, ii);
+                                    ii++;
+                                    break;
+                                }
+
+                                else{
+                                    printf("limite de alunos atingido!");
+                                    break;
+                                }
 
                             case 1:
-                                printf("digite o numero correspondente ao aluno que deseja atualizar:\n")
-                                lista_aluno(a1, ii);
-                                scanf("%d", &atualizacao_aluno);
-                                cadastra_aluno(a1, atualizacao_aluno);
+                                valida_aluno(aluno_valido);
+                                if(aluno_valido != 1){
+                                    printf("digite o numero correspondente ao aluno que deseja atualizar:\n")
+                                    lista_aluno(a1, ii);
+                                    scanf("%d", &atualizacao_aluno);
+                                    cadastra_aluno(a1, atualizacao_aluno);
+                                    break;
+                                }
+                                
+                                else{
+                                    printf("nenhum aluno cadastrado");
+                                    break;
+                                }
 
-                            case 2:
-                                printf("digite o numero correspondente ao aluno que deseja excluir:\n");
-                                lista_aluno(a1, ii);
-                                scanf("%d", &exclusao_aluno);
-                                exclui_aluno(exclusao_aluno, ii, a1);
                                 break;
-                        }
+                            case 2:
+                                valida_aluno(aluno_valido);
+                                if (aluno_valido != 1){
+                                    printf("digite o numero correspondente ao aluno que deseja excluir:\n");
+                                    lista_aluno(a1, ii);
+                                    scanf("%d", &exclusao_aluno);
+                                    exclui_aluno(exclusao_aluno, ii, a1);
+                                    break;
+                                }
+                                
+                                else{
+                                    printf("nenhum aluno cadastrado");
+                                    break;
+                                }
+
+                                }
                         break;
                     
                     case 1:
