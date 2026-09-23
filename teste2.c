@@ -42,7 +42,7 @@ void cadastra_aluno(aluno a0[], int i1){
     printf("cpf do aluno:\n");
     scanf("%d", &a0[i1].cpf_aluno);
     i1++;
-    break;
+
 }
                
 void cadastra_professor(professor p0[], int j){
@@ -70,14 +70,14 @@ void cadastra_disciplina(disciplina d0[], int k){
 
 void exclui_aluno(int exclusao_aluno0, int i2, aluno a2[]){
         
-        int aux = 0;
+        aluno aux;
 
-        for(int i0 = exclusao_aluno0; i0 < i2; i0++){
+        for(int i0 = exclusao_aluno0; i0 < i2 && i0 + 1 < i2; i0++){
             aux = a2[i0 + 1];
-            a2[i0 + 1] = a[i0];
-            a[i0] = aux; 
+            a2[i0 + 1] = a2[i0];
+            a2[i0] = aux; 
         }
-            qtd--;
+            
     }   
 
 int valida_aluno(int i4){
@@ -119,6 +119,7 @@ int main(){
     aluno a1[CAPACIDADE];
     int opcao_menu;
     int opcao_cadastro_aluno;
+    int opcao_cadastro_aluno2;
     int opcao_cadastro;
     int atualizacao_aluno;
     int exclusao_aluno;
@@ -140,12 +141,12 @@ int main(){
                 
                 switch(opcao_cadastro){
                     case 0:
-                        printf("0- incluir aluno\n1- atualizar aluno\n2- excluir aluno:\n");
-                        scanf("%d", &opcao_cadastro_aluno);
-                        switch(opcao_cadastro_aluno){
+                        printf("1- incluir aluno\n2- atualizar aluno\n3- excluir aluno:\n");
+                        scanf("%d", &opcao_cadastro_aluno2);
+                        switch(opcao_cadastro_aluno2){
                         
-                            case 0:
-                                valida_aluno(aluno_valido);
+                            case 1:
+                                aluno_valido = valida_aluno(ii);
                                 if(aluno_valido < 2){
                                     cadastra_aluno(a1, ii);
                                     ii++;
@@ -157,10 +158,10 @@ int main(){
                                     break;
                                 }
 
-                            case 1:
-                                valida_aluno(aluno_valido);
+                            case 2:
+                                aluno_valido = valida_aluno(ii);
                                 if(aluno_valido != 1){
-                                    printf("digite o numero correspondente ao aluno que deseja atualizar:\n")
+                                    printf("digite o numero correspondente ao aluno que deseja atualizar:\n");
                                     lista_aluno(a1, ii);
                                     scanf("%d", &atualizacao_aluno);
                                     cadastra_aluno(a1, atualizacao_aluno);
@@ -173,13 +174,14 @@ int main(){
                                 }
 
                                 break;
-                            case 2:
-                                valida_aluno(aluno_valido);
+                            case 3:
+                                aluno_valido = valida_aluno(ii);
                                 if (aluno_valido != 1){
                                     printf("digite o numero correspondente ao aluno que deseja excluir:\n");
                                     lista_aluno(a1, ii);
                                     scanf("%d", &exclusao_aluno);
                                     exclui_aluno(exclusao_aluno, ii, a1);
+                                    ii--;
                                     break;
                                 }
                                 
