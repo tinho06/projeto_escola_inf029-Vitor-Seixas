@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define CAPACIDADE 3
 
@@ -10,7 +11,7 @@ typedef struct data{
     }data;
 
 typedef struct aluno{
-    int cpf_aluno;
+    char cpf_aluno;
     int matricula_aluno;
     char nome_aluno [60];
     data nascimento_aluno;
@@ -18,7 +19,7 @@ typedef struct aluno{
     }aluno;
 
 typedef struct professor{
-    int cpf_prof;
+    char cpf_prof;
     int matricula_prof;
     char nome_prof [60];
     data nascimento_prof;
@@ -36,37 +37,45 @@ typedef struct disciplina{
 void cadastra_aluno(aluno a0[], int i1){
 
     printf("nome do aluno:\n");
-    scanf("%s", a0[i1].nome_aluno);
+    fgets(a0[i1].nome_aluno, sizeof(a0[i1].nome_aluno), stdin);
     printf("matricula do aluno:\n");
     scanf("%d", &a0[i1].matricula_aluno);
     printf("cpf do aluno:\n");
-    scanf("%d", &a0[i1].cpf_aluno);
-    i1++;
-
+    scanf("%s", &a0[i1].cpf_aluno);
 }
                
-void cadastra_professor(professor p0[], int j){
+void cadastra_professor(professor p0[], int j1){
     
     printf("nome do professor:\n");
-    scanf("%s", p0[j].nome_prof);
+    fgets(p0[j1].nome_prof, sizeof(p0[j1].nome_prof), stdin);
     printf("matricula do professor:\n");
-    scanf("%d", &p0[j].matricula_prof);
+    scanf("%d", &p0[j1].matricula_prof);
     printf("cpf do professor:\n");
-    scanf("%d", &p0[j].cpf_prof);
-    j++;
+    scanf("%s", &p0[j1].cpf_prof);
 }                        
                 
-void cadastra_disciplina(disciplina d0[], int k){
+void cadastra_disciplina(disciplina d0[], int k1){
 
     printf("nome da disciplina:\n");
-    scanf("%s", d0[k].nome_dis);
+    fgets(d0[k1].nome_dis, sizeof(d0[k1].nome_dis), stdin);
     printf("codigo da disciplina:\n");
     scanf("%d", &d0[k].codigo);
     printf("semestre da disciplina:\n");
     scanf("%d", &d0[k].semestre);
-    k++;
-        
+    k++;  
 }
+
+void exclui_prof(int exclusao_aluno0, int i2, aluno a2[]){
+        
+        aluno aux;
+
+        for(int i0 = exclusao_aluno0; i0 < i2 && i0 + 1 < i2; i0++){
+            aux = a2[i0 + 1];
+            a2[i0 + 1] = a2[i0];
+            a2[i0] = aux; 
+        }
+            
+    }
 
 void exclui_aluno(int exclusao_aluno0, int i2, aluno a2[]){
         
